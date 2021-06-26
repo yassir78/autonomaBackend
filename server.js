@@ -14,6 +14,6 @@ io.on("connection", (socket) => {
   });
   socket.on("data", (data) => {
     var frame = Buffer.from(data, "base64").toString();
-    io.emit("image", data);
+    io.emit("image", frame);
   });
 });
