@@ -13,10 +13,9 @@ io.on("connection", (socket) => {
     io.emit("test", message.response);
   });
   socket.on("data", (data) => {
-    let ret = Object.assign({}, data, {
+    /*   let ret = Object.assign({}, data, {
       frame: Buffer.from(data.frame, "base64").toString(),
-    });
-    console.log(ret);
-    io.emit("image", ret);
+    }); */
+    io.emit("image", data);
   });
 });
