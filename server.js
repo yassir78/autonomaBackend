@@ -12,4 +12,10 @@ io.on("connection", (socket) => {
   socket.on("speed", (message) => {
     io.emit("test", message.response);
   });
+  socket.on("data", (data) => {
+    let ret = Object.assign({}, data, {
+      frame: Buffer.from(data.frame, "base64").toString(),
+    });
+    io.emit("image", ret);
+  });
 });
