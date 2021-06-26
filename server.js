@@ -15,4 +15,7 @@ io.on("connection", (socket) => {
   socket.on("data", (data) => {
     io.emit("image", data);
   });
+  socket.on("direction", (data) => {
+    io.emit("turn", data);
+  });
 });
