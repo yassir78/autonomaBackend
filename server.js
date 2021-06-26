@@ -13,7 +13,6 @@ io.on("connection", (socket) => {
     io.emit("test", message.response);
   });
   socket.on("data", (data) => {
-    var frame = Buffer.from(data, "base64").toString();
-    io.emit("image", frame);
+    io.emit("image", data);
   });
 });
