@@ -12,6 +12,7 @@ io.on("connection", (socket) => {
   socket.on("speed", (message) => {
     io.emit("test", message.response);
   });
+  // comment
   socket.on("data", (data) => {
     io.emit("image", data);
   });
